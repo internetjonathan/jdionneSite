@@ -1,0 +1,111 @@
+html {
+   background: url("/img/tile5.jpeg") repeat center center fixed;
+   background-size: cover;
+}
+
+.content-container {
+  min-height: auto;
+  margin-top: 140px;
+  // height: auto;
+  width: 100%;
+  display: none;
+  background: #e1e5ed;
+  box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.4);
+
+  @include mobile {
+    padding: 0 20px;
+  }
+
+
+  .content {
+    // padding-bottom: 60px;
+    text-align: center;
+
+
+    @include tablet {
+      display: flex;
+      justify-content: space-around;
+      flex-direction: row-reverse;
+    }
+
+    &:nth-of-type(even) {
+      flex-direction: row-reverse;
+    }
+
+    > img {
+      width: 100%;
+
+      @include tablet {
+        width: 40%;
+        align-self: flex-start;
+      }
+      @media screen and (min-width: 1600px) {
+        max-width: 900px;
+      }
+    }
+  }
+
+  .copy {
+    width: 100%;
+
+
+    @include mobile {
+      margin-bottom: 30px;
+    }
+
+    @include tablet {
+      width: 40%;
+    }
+
+    h2 {
+      font-size: 18px;
+      text-align: left;
+      color: $color-red;
+      padding-bottom: 5px;
+
+      @include tablet {
+        font-size: 1.3vw;
+
+      }
+    }
+
+    h1 {
+      font-family: 'nunito';
+      letter-spacing: 3px;
+      text-align: left;
+      color: $color-green;
+      font-size: 43px;
+      margin-top: 400px;
+
+      @include tablet {
+        font-size: 3vw;
+        margin: 0 0 2vw;
+        justify-content: center;
+      }
+
+      @include mobile {
+        font-size: 30px;
+      }
+    }
+
+    p {
+      font-family: 'Nunito', sans-serif;
+      text-align: justify;
+      font-size: 19px;
+      line-height: 25px;
+
+      @include mobile {
+        font-size: 15px;
+      }
+
+      @media screen and (min-width: 768px) {
+        font-size: 1.5vw;
+        line-height: 1.4;
+      }
+      @media screen and (min-width: 1600px) {
+        font-size: 28px;
+        line-height: 1.4;
+      }
+    }
+  }
+}
