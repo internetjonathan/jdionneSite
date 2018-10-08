@@ -6,26 +6,183 @@
 {% block content %}
 
   {{ nav.active('home') }}
-  <div class="content-container">
+  <div class="content-container" id="row1">
+    <div class="content">
+      <div class="copy">
+        <h1>Nice To Meet You</h1>
+        <p>
+Raised in the melting pot that is Miami I have always found an interest in not only different cultures the city brings but also how they can feed off each other to create something new and original.  I discovered I had a need to create and produce content that was easily digestible and interesting to look at.  I enrolled in an immersive coding bootcamp which completely changed the way I look at how technology and people interact. Which leaves me to where I am today, an ambitious front end developer, proficient in end-to-end web development using CSS, HTML, JavaScript and Ruby ready to leave a mark on our ever growing world.
+        </p>
+      </div>
+      <img src="img/portrait2.png" alt="jonathan dionne">
+    </div>
+  </div>
+
+  <div class="content-container" id="row2">
+    <div class="banner">
+      <div class="skills">
+        <div><img src="img/html.png"></div>
+        <div><img src="img/gulp2.png"></div>
+        <div><img src="img/js.png"></div>
+        <div><img src="img/jq.png"></div>
+        <div><img src="img/css.png"></div>
+        <div><img src="img/ruby.png"></div>
+        <div><img src="img/node.png"></div>
+      </div>
+      <!-- <div class="banner">
+        <div class="pictures">
+          <div><img src="img/html.png"></div>
+          <div><img src="img/gulp2.png"></div>
+          <div><img src="img/js.png"></div>
+          <div><img src="img/jq.png"></div>
+          <div><img src="img/css.png"></div>
+          <div><img src="img/ruby.png"></div>
+          <div><img src="img/node.png"></div>
+        </div>
+      </div> -->
+    <div class="content">
+      <div class="copy">
+        <h1>Projects</h1>
+        <h2>
+          <a href="https://dist-izvdzocqhi.now.sh/" target="_blank">Cafe Roval Sample</a>
+        </h2>
+        <p>
+          A fully responsive website made to master gulp.js and the nunjucks templating engine.
+        </p>
+      </div>
+      <!-- <img src="img/cocktail.png" alt="roval-food"> -->
+    </div>
+    </div>
+  </div>
+
+  <div class="content-container" id="row3">
+    <div class="banner">
       <div class="content">
         <div class="copy">
-          <h1>IM FUCKING GAY DUDE</h1>
-          <p>
-Raised in the melting pot that is Miami I have always found an interest in not only different cultures the city brings but also how they can feed off each other to create something new and original.  I discovered I had a need to create and produce content that was easily digestible and interesting to look at.  I enrolled in an immersive coding bootcamp which completely changed the way I look at how technology and people interact. Which leaves me to where I am today, an ambitious front end developer, proficient in end-to-end web development using CSS, HTML, JavaScript and Ruby ready to leave a mark on out ever growing world.
-          </p>
+          <h1>Contact Me</h1>
+          <div class="form">
+            <form id="form" method="POST" class="text-center" action="https://formspree.io/jdionne@54hundred.com">
+              <!-- change the form action to your script url -->
+
+              <fieldset class="form-group">
+                <label for="name">Name </label>
+                <input required="" class="form-control" id="name" name="name" placeholder="Your Name">
+              </fieldset>
+
+              <fieldset class="form-group">
+                <label for="email">Email Address </label>
+                <input class="form-control" id="email" name="email" type="email" value="" required="" placeholder="Your Email">
+              </fieldset>
+
+              <fieldset class="form-group">
+                <label for="number">Number </label>
+                <input class="form-control" id="number" name="number" type="tel" required="" placeholder="Your Phone Number">
+              </fieldset>
+
+              <fieldset class="form-group">
+                <label for="message">Message </label>
+                <textarea required="" class="form-control" id="message" name="message" rows="5" placeholder="Your Message"></textarea>
+              </fieldset>
+              <button type="submit" class="btn btn-primary">Send Message</button>
+
+            </form>
+            </div>
+          </div>
+          <div id="scene3d"></canvas>
+            <script type="text/javascript" src="three/three.js"></script>
+            <script type="text/javascript" src="three/OrbitControls.js"></script>
+            <script type="text/javascript">
+              var scene3d = document.getElementById("scene3d");
+              var CANVAS_WIDTH = 500;
+              var CANVAS_HEIGHT = 550;
+
+              // SCENE
+
+              scene = new THREE.Scene();
+
+              // CAMERA
+
+              camera = new THREE.PerspectiveCamera(25, CANVAS_WIDTH / CANVAS_HEIGHT, 0.1, 100);
+              camera.position.x = 3;
+              camera.position.y = 3;
+              camera.position.z = 3;
+              camera.lookAt(scene.position);
+
+              // RENDERER
+
+              renderer = new THREE.WebGLRenderer({alpha: true});
+              renderer.setClearColor(0x000000, 0);
+              renderer.setSize(CANVAS_WIDTH, CANVAS_HEIGHT);
+
+              var controls = new THREE.OrbitControls(camera, renderer.domElement);
+              controls.minDistance = 5;
+              controls.maxDistance = 10;
+
+              //create shape
+              var geometry = new THREE.BoxGeometry(1,1,1);
+
+              //create a material, color or texture
+              var material =
+              [
+                new THREE.MeshNormalMaterial({color: 0xffffff}),
+                new THREE.MeshNormalMaterial({color: 0xffffff}),
+                new THREE.MeshNormalMaterial({color: 0xffffff}),
+                new THREE.MeshNormalMaterial({color: 0x7777ff}),
+                new THREE.MeshNormalMaterial({color: 0xffffff}),
+                new THREE.MeshNormalMaterial({color: 0x7777ff}),
+              ];
+              var cube = new THREE.Mesh(geometry,material);
+              scene.add(cube);
+
+              // var ambientLight = new THREE.AmbientLight(0xffffff,0.5);
+              // scene.add(ambientLight);
+
+              renderer.shadowMap.enabled = true;
+              renderer.shadowMap.type = THREE.PCFShadowMap;
+              var light = new THREE.SpotLight(0xffffff, 5.0, 1000);
+              light.position.y = 100;
+              light.target = cube;
+
+              light.castShadow = true;
+              light.shadow = new THREE.LightShadow(new THREE.PerspectiveCamera(100,1,500,1000));
+              light.shadow.bias = 0.001;
+              light.shadow.mapSize.width = 2048 * 2;
+              light.shadow.mapSize.height = 2048 * 2;
+              scene.add(light);
+
+              cube.castShadow = true;
+              cube.receiveShadow = true;
+
+
+              var update = function(){
+                cube.rotation.x += 0.01;
+                cube.rotation.y += 0.005;
+              };
+
+              //run game
+              var render = function(){
+                renderer.render( scene, camera);
+              };
+              //run game loop (update, render, repeat)
+              var GameLoop = function(){
+                requestAnimationFrame(GameLoop);
+
+                update();
+                render();
+              };
+
+              GameLoop();
+
+              // FINISH SCENE SETUP
+
+              // document.body.appendChild(scene3d.domElement);
+              scene3d.appendChild(renderer.domElement);
+              renderer.render(scene, camera);
+
+            </script>
+          <!-- <a href="#" target="_blank"></a> -->
         </div>
-        <img src="img/portrait2.png" alt="jonathan dionne">
       </div>
-      <!-- <div class="content">
-        <div class="copy">
-          <h2>Cafe Roval News</h2>
-          <h1>Brand New <br> Seasonal Menu</h1>
-          <p>
-            You already know about the exquisite backyard gardens, but now feast your eyes on an entirely reconceived contemporary Mediterranean menu created by the talented chef Curtis Rhodes.
-            You may have seen his name before at other local favorites like the River Oyster Bar and Oak Tavern. Before gracing Miami with his epicurean expertise, he trained for many years in Hawaii under master chef Jean Marie Josselin, garnering a uniquely delicate coastal touch that he brings to every item on the menu...
-          </p>
-        </div>
-        <img src="img/cocktail.png" alt="roval-food">
-      </div> -->
+  </div>
 
 {% endblock %}

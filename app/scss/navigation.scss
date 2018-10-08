@@ -4,7 +4,6 @@
   text-align: center;
   letter-spacing: 15px;
   font-weight: lighter;
-  /*margin-top: 30px;*/
   cursor: pointer;
   margin-top: 30%;
   transition: 2s;
@@ -13,6 +12,10 @@
   font-weight:bold;
   color: white;
   padding-bottom: 15px;
+
+  @include mobile {
+    margin-top: 90%;
+  }
 }
 
 #header span {
@@ -20,54 +23,13 @@
 }
 #header span:hover {
   font-size:45px;
-  color: $color-green;
+  color: #2a2a2a;
   transition: .2s;
 
-}
-
-#header span.letter1:hover {
-  font-size:45px;
-  color: $color-green;
-  transition: .2s;
-}
-#header span.letter2:hover {
-  font-size:45px;
-  color: yellow;
-  transition: .2s;
-}
-
-#header span.letter3:hover {
-  font-size:45px;
-  color: #F92C00;
-  transition: .2s;
-}
-#header span.letter4:hover {
-  font-size:45px;
-  color: #5dff55;
-  transition: .2s;
-}
-#header span.letter5:hover {
-  font-size:45px;
-  color: #FF9933;
-  transition: .2s;
-}
-#header span.letter6:hover {
-  font-size:45px;
-  color: #d06fff;
-  transition: .2s;
-}
-#header span.letter7:hover {
-  font-size:45px;
-  color: $color-green;
-  transition: .2s;
-}
-#header span.letter8:hover {
-  font-size:45px;
-  color: yellow;
-  transition: .2s;
 }
 
 #header {
+  z-index: 1;
   background-color: pink;
   position: fixed;
   box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.4);
@@ -76,4 +38,18 @@
   top:0;/* Position the navbar at the top of the page */
   width: 100%; /* Full width */
   display: block;
+}
+
+.burger-icon {
+  @include mobile{
+    display: block;
+    position: absolute;
+    top: 35px;
+    right: 10px;
+    height:40px;
+    width: 40px;
+    background: url('/img/burger.png')no-repeat 98% center;
+    background-size: 40px;
+    cursor: pointer;
+  }
 }
