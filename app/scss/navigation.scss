@@ -1,32 +1,4 @@
-#header h1 {
-  display: block;
-  font-size: 32px;
-  text-align: center;
-  letter-spacing: 15px;
-  font-weight: lighter;
-  cursor: pointer;
-  margin-top: 30%;
-  transition: 2s;
-  // font-family: 'Open Sans', sans-serif;
-  font-family: "nunito";
-  font-weight:bold;
-  color: white;
-  padding-bottom: 15px;
 
-  @include mobile {
-    margin-top: 90%;
-  }
-}
-
-#header span {
-  transition: 1s;
-}
-#header span:hover {
-  font-size:45px;
-  color: #2a2a2a;
-  transition: .2s;
-
-}
 
 #header {
   z-index: 1;
@@ -38,18 +10,33 @@
   top:0;/* Position the navbar at the top of the page */
   width: 100%; /* Full width */
   display: block;
-}
 
-.burger-icon {
-  @include mobile{
+  span {
+    transition: 1s;
+  }
+  span:hover{
+    font-size:45px;
+    color: #2a2a2a;
+    transition: .2s;
+  }
+
+    h1 {
     display: block;
-    position: absolute;
-    top: 35px;
-    right: 10px;
-    height:40px;
-    width: 40px;
-    background: url('/img/burger.png')no-repeat 98% center;
-    background-size: 40px;
+    font-size: 32px;
+    text-align: center;
+    letter-spacing: 15px;
+    font-weight: lighter;
     cursor: pointer;
+    margin-top: 30%;
+    transition: 2s;
+    // font-family: 'Open Sans', sans-serif;
+    font-family: "nunito";
+    font-weight:bold;
+    color: white;
+    padding-bottom: 15px;
+
+    @include mobile {
+      margin-top: 90%;
+    }
   }
 }

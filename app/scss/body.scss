@@ -2,7 +2,7 @@ html {
    background: url("/img/tile5.jpeg") repeat center center fixed;
    background-size: cover;
    font-family: "nunito";
-   min-height: 800px;
+
 }
 .content-container {
   min-height: auto;
@@ -126,7 +126,7 @@ html {
         line-height: 1.4;
       }
       @media screen and (min-width: 1200px) {
-        font-size: 19px;
+        font-size: 18px;
         line-height: 1.4;
       }
     }
@@ -162,17 +162,18 @@ html {
     color: black;
   }
 }
-.banner {
-  display: none;
-}
-.AfterScroll {
-  display: block;
-}
+// .banner {
+//   display: none;
+// }
+// .AfterScroll {
+//   display: block;
+// }
 
 .skills {
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
+
   img{
     height: 110px;
     width: auto;
