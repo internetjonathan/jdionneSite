@@ -49,6 +49,11 @@ html {
         max-width: 400px;
       }
     }
+    .projects{
+      display: flex;
+      justify-content: center;
+      flex-flow: row wrap;
+    }
   }
 
   .copy {
@@ -131,6 +136,8 @@ html {
       }
     }
   }
+
+
 }
 
 #row1.content-container {
@@ -173,65 +180,46 @@ html {
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
+  justify-content: space-around;
+  padding-bottom: 20px;
+  text-align: center;
+
 
   img{
     height: 110px;
     width: auto;
     padding: 25px 20px 15px 20px;
-
   }
-}
 
-// Form
+  .item {
+    max-width: 400px;
 
-.form {
-  input {
-    width: 100%;
-    height:30px;
-    box-sizing: border-box;
-    font-size: 16px;
-    // min-width: 500px;
+    p {
+      // width:250px;
+      text-align: center;
+      padding-bottom: 15px;
+    }
+    h1 {
+      font-family: 'nunito';
+      letter-spacing: 3px;
+      text-align: left;
+      color: pink;
+      font-size: 43px;
+      text-align: center;
 
-    @include mobile {
-      // max-width: 346px;
+      @include tablet {
+        font-size: 3vw;
+        margin: 0 0 1vw;
+        justify-content: center;
+      }
+
+      @include mobile {
+        font-size: 30px;
+      }
     }
   }
-  textarea {
-    width:100%;
-    height:100px;
-    font-size: 16px;
-    box-sizing: border-box;
-  }
-  label{
-    text-align: left;
-    padding-top: 20px;
-    padding-bottom: 5px;
-    font-size: 20px;
-    display: block;
-    // width:50%;
-  }
-  h1 {
-    // text-align: center !important;
-    color: rgb(10, 46, 163);
-    font-size: 43px;
-  }
-  button {
-    font-size: 20px;
-    padding-top:20px;
-    padding-bottom:20px;
-    // padding: 15px 50px 15px 50px;
-    transition-duration: 0.4s;
-    color: black;
-    background-color: pink;
-    width: 100%;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-  }
-  button:hover{
-    color:pink;
-    background-color: grey;
-  }
 }
+
 
 canvas {
   @include mobile {
